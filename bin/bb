@@ -1,0 +1,16 @@
+#!/usr/bin/env zsh
+
+# Information for this script comes from:
+# <http://superuser.com/questions/383124/knowing-user-is-sshing-in-from-a-shell-script>
+
+if [[ -n $SSH_CONNECTION ]] || [[ 'linux-gnu' == "$OSTYPE" ]]
+then
+    if [[ -n $SSH_CONNECTION ]]
+    then
+      vim "$@"
+    else
+      vim -g --nofork "$@"
+    fi
+else
+  /Applications/Emacs.app/Contents/MacOS/bin/emacsclient -c "$@"
+fi

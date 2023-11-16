@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+main_branch_is="master"
+allow_master_push=f
+
+
+current_branch=$(git rev-parse --abbrev-ref HEAD)
+if [[ "$current_branch" == "master" ]]; then
+    if [[ "$allow_master_push" == "f" ]]; then
+        echo "You are trying to push MASTER!!! If you REALLY want to do this edit sd git main_branch_check allow_master_push t"
+        exit 1
+    fi
+fi

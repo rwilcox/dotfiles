@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# git-state reminds me where I left this repo...
+echo Current state of repo is
+echo ==================================
+git status
+echo ==================================
+echo
+
+echo Latest stash contains mods to...
+echo ==================================
+git stash show
+echo ==================================
+echo
+
+echo current branch is
+echo ==================================
+git rev-parse --abbrev-ref HEAD
+echo ==================================
