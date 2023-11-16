@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+
+perl -pe 's/\\"/"/g; s/\\n/\n/g'
+
+#jq -r '.'
+#sed 's#\\\"#\"#g' | sed 's#\\\\#\\#g'

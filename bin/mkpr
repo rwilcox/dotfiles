@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+#if [ -e .github/PULL_REQUEST_TEMPLATE.md ]; then
+#    gh pr create --body-file=.github/PULL_REQUEST_TEMPLATE.md --web
+#else
+    gh pr create --web
+#fi

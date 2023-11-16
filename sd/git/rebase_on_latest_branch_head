@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+# rebases your current branch on the HEAD of $1 (which should be the branch it started from)
+#
+# thanks https://andrewlock.net/working-with-stacked-branches-in-git-is-easier-with-update-refs/
+
+git rebase $1 --update-refs
